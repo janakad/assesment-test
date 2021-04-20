@@ -11,17 +11,15 @@
 
 export function count(start, end, callback) {
     let counter = start
-    const intervalFunction = setInterval(() => {
+    const intervalFunction = setInterval((callbackFunction,) => {
+        callbackFunction(counter)
+
         if (counter >= end) {
             clearInterval(intervalFunction)
         }
 
-        callback()
-
-        console.log(counter)
-
         counter++
-    }, 100)
+    }, 100, callback)
     return () => {
         clearInterval(intervalFunction)
     }

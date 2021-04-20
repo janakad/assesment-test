@@ -1,6 +1,11 @@
 import fs from 'fs';
-import path from 'path';
+import path, {dirname} from 'path';
 import {isPalindromePossible} from './05_anagram-palindrome.js';
+
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 describe('anagram-palindrome', () => {
   it('should return true for possible to make palindrome', () => {
